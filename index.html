@@ -5,57 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emergency Hotline</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+        body{
+            font-family: "Roboto", sans-serif;
+        }
+    </style>
 </head>
 <body>
-    <nav>
-        <div>
-            <img src="./assets/logo.png" alt="logo image">
-            <p>Emergency Service</p>
+    <nav class="flex items-center justify-between px-10 py-4">
+        <div class="flex items-center justify-center gap-2 font-extrabold text-xl/5 text-emerald-800">
+            <img src="./assets/logo.png" alt="logo image" class="w-8 h-8">
+            <p>Emergency <br>Service</p>
         </div>
-        <div>
-            <span>
-                <img src="./assets/heart.png" alt="heart image">
+        <div class="flex items-center justify-center gap-4">
+            <span class="flex gap-2 bg-emerald-100 px-4 py-2 rounded-full">
+                <img src="./assets/heart.png" alt="heart image" class="w-6 h-6">
                 <p>0</p>
             </span>
-            <span>
-                <img src="./assets/coin.png" alt="coin image">
-                <p>0</p>
+            <span class="flex gap-2 bg-emerald-100 px-4 py-2 rounded-full">
+                <img src="./assets/coin.png" alt="coin image" class="w-6 h-6">
+                <p>100</p>
             </span>
-            <button>2 Copy</button>
+            <button class="text-white bg-emerald-900 px-4 py-2 rounded-full">2 Copy</button>
         </div>
     </nav>
     <main>
-        <section>
-            <img src="./assets/logo.png" alt="logo image">
-            <h1>Emergency Service Directory</h1>
-            <h5>Government Emergency Services at Your Fingertip - A Project by  Government of the People's Republic of Bangladesh</h5>
+        <section class="flex flex-col items-center justify-center gap-2 px-4 py-12 text-center text-white bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+            <img src="./assets/logo-dark.png" alt="logo image" class="w-20 h-20">
+            <h1 class="font-bold text-2xl">Emergency Service Directory</h1>
+            <h5 class="font-medium text-sm">Government Emergency Services at Your Fingertip - A Project by  Government of the People's Republic of Bangladesh</h5>
         </section>
-        <section>
-            <div>
-                <span>
-                    <div>
-                        <img src="./assets/ambulance.png" alt="ambulance image">
+        <section class="grid grid-cols-1 md:grid-cols-[75%_25%] gap-4 p-8 bg-emerald-50">
+            <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+                <span class="flex flex-col gap-4 p-6 bg-white rounded-lg">
+                    <div class="flex items-center justify-between">
+                        <img src="./assets/ambulance.png" alt="ambulance image" class="w-10 h-10 bg-rose-200 p-2 rounded-xl">
                         <button><i class="fa-regular fa-heart"></i></button>
                     </div>
-                    <h4>Ambulance Service</h4>
-                    <small>Ambulance</small>
-                    <h3>1994-999999</h3>
-                    <p>Health</p>
                     <div>
-                        <button>
+                        <h4 class="font-bold text-lg">Ambulance Service</h4>
+                        <small class="text-gray-600">Ambulance</small>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-xl">1994-999999</h3>
+                        <small class="bg-gray-200 px-3 py-1 rounded-full text-gray-700">Health</small>
+                    </div>
+                    <div class="grid grid-cols-2 place-content-center gap-4">
+                        <button class="flex items-center justify-center gap-2 px-4 py-2 rounded-lg text-xs text-gray-500 border-1 border-gray-500">
                             <i class="fa-regular fa-copy"></i>
                             Copy
                         </button>
-                        <button>
+                        <button class="flex items-center justify-center gap-2 px-4 py-2 rounded-lg text-xs text-white bg-emerald-600">
                             <i class="fa-solid fa-phone"></i>
                             Call
                         </button>
                     </div>
                 </span>
             </div>
-            <aside>
-                <div>
-                    <h2>Call History</h2>
+            <aside class="h-full space-y-2 bg-white rounded-lg p-4">
+                <div class="flex items-center justify-between">
+                    <h2 class="font-bold"><i class="fa-regular fa-clock"></i> Call History</h2>
                     <button>Clear</button>
                 </div>
                 <div>
