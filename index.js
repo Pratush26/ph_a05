@@ -8,6 +8,19 @@ let historyContainer = document.querySelector("aside>section");
 let ClearHistory = function () {
     historyContainer.innerHTML = "";
 }
+let callHistory = function (serviceName, number) {
+    let now = new Date();
+    let historyContainer = document.querySelector("aside>section");
+    let div = document.createElement("div");
+    div.className = "flex items-center justify-between text-xs text-gray-700 px-4 py-2 gap-2 bg-gray-100 rounded-md";
+    div.innerHTML = `
+  <span>
+      <h5 class="font-bold text-sm text-gray-800">${serviceName}</h5>
+      <p>${number}</p>
+  </span>
+  <span>${now.toLocaleTimeString('en-US', { hour12: true })}</span>`;
+    historyContainer.append(div);
+}
 
 // event listenrs
 heartBtns.forEach(btn => {
@@ -28,11 +41,13 @@ copyBtns.forEach(btn => {
 });
 callBtns.forEach(btn => {
     btn.addEventListener("click", (e) => {
+        let service = e.target.parentElement.parentElement.querySelector("h4").innerText;
         let text = e.target.parentElement.parentElement.querySelector("h3").innerText;
         let coin = document.getElementById("coin");
         if (parseInt(coin.innerText) >= 20) {
             alert(`Calling - ${text}`);
             coin.innerText = parseInt(coin.innerText) - 20;
-        }else alert("You don't have enough coins");
+            callHistory(service, text);
+        } else alert("You don't have enough coins");
     });
 });
