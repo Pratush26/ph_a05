@@ -22,7 +22,9 @@ let callHistory = function (serviceName, number) {
     historyContainer.append(div);
 }
 
+
 // event listenrs
+// Heart buttons funtionality
 heartBtns.forEach(btn => {
     btn.addEventListener("click", (e) => {
         let heartCouter = document.getElementById("heart");
@@ -30,6 +32,8 @@ heartBtns.forEach(btn => {
         alert("Heart added");
     });
 });
+
+// Copy buttons functionality
 copyBtns.forEach(btn => {
     btn.addEventListener("click", (e) => {
         let text = e.target.parentElement.parentElement.querySelector("h3").innerText;
@@ -39,13 +43,15 @@ copyBtns.forEach(btn => {
         navigator.clipboard.writeText(text)
     });
 });
+
+//Call buttons functionality
 callBtns.forEach(btn => {
     btn.addEventListener("click", (e) => {
         let service = e.target.parentElement.parentElement.querySelector("h4").innerText;
         let text = e.target.parentElement.parentElement.querySelector("h3").innerText;
         let coin = document.getElementById("coin");
         if (parseInt(coin.innerText) >= 20) {
-            alert(`Calling - ${text}`);
+            alert(`Calling - ${text} ( ${service} )`);
             coin.innerText = parseInt(coin.innerText) - 20;
             callHistory(service, text);
         } else alert("You don't have enough coins");
